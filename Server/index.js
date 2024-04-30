@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose') 
 const cors = require('cors')//Middleware
 const bodyParser = require('body-parser')//Middleware
-const DB ='mongodb+srv://Shourya:hello01@dhandrishti.xkx1sv0.mongodb.net/?retryWrites=true&w=majority&appName=Dhandrishti'
+const DB ='mongodb+srv://Username:password@dhandrishti.xkx1sv0.mongodb.net/?retryWrites=true&w=majority&appName=Dhandrishti'//Users need  to be created on atlas
 const EventEmitter = require('events');
 
 EventEmitter.defaultMaxListeners = 15;
