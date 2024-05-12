@@ -1,25 +1,22 @@
-const mongoose = require('mongoose')
-const Schema = require('mongoose')
+const { MfaRequiredError } = require("@auth0/auth0-react");
+const mongoose = require("mongoose");
+const Schema = require("mongoose");
 
-const userSchema =new mongoose.Schema({
-  LenderID: { 
-    type: mongoose.Schema.Types.ObjectId,
-    auto: true
-  },
+const userSchema = new mongoose.Schema({
   LenderName: {
-    type: String
+    type: String,
   },
-  LenderType: {
-    type: String
+  LoanType: {
+    type: String,
   },
-  Amount: {
-    type: Number
+  LemailId: {
+    type: String,
   },
   ContactNumber: {
-    type: Number
+    type: Number,
   },
 });
 
-const Lender = mongoose.model('Lender', userSchema);
+const Lender = mongoose.model("Lender", userSchema);
 
-module.exports=Lender;
+module.exports = Lender;

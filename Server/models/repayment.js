@@ -1,23 +1,24 @@
-const mongoose = require('mongoose')
-const Schema = require('mongoose')
-
+const mongoose = require("mongoose");
+const Schema = require("mongoose");
+const Borrower = require("./borrower");
 
 const userSchema = new mongoose.Schema({
-    Repayment_id: {
-      type: Schema.Types.ObjectId,
-      auto: true
-    },
-    RepaymenDate: {
-      type: Date
-    },
-    Amount: {
-      type: Number
-    },
-    Loan_id: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Loan'
-    }
-  });
-  
-  const Repaymnent = mongoose.model('Repayment', userSchema);
+  RepaymenDate: {
+    type: Date,
+  },
+  repAmount: {
+    type: Number,
+  },
+  Loan_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Loan",
+  },
+  BemailId: {
+    type: String,
+    ref: Borrower,
+  },
+});
 
-  module.exports = Repaymnent;
+const Repaymnent = mongoose.model("Repayment", userSchema);
+
+module.exports = Repaymnent;

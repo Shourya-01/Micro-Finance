@@ -33,15 +33,26 @@ export default function Header() {
                 Log in
               </Link>
             ) : (
-              <Link
-                to="#"
-                className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
-                onClick={() => logout()}
+              <div
+                style={{
+                  display: "flex",
+                }}
               >
-                Log out
-                <h4>{user.name}</h4>
-                <h6>{user.email}</h6>
-              </Link>
+                <img
+                  class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+                  src={user.picture}
+                  alt="Bordered avatar"
+                  style={{ marginTop: "10px", marginRight: "2px" }}
+                />
+                <Link
+                  to="#"
+                  className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                  onClick={() => logout()}
+                >
+                  <h4>Log out {user.name}</h4>
+                  <h6>{user.email}</h6>
+                </Link>
+              </div>
             )}
           </div>
           <div
